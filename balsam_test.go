@@ -72,7 +72,7 @@ func random() *rand.Rand {
 	return rand.New(src)
 }
 
-// generateCases generates case in the following format:
+// generateCases generates cases in the following format:
 // [
 // 		["localhost:8080?delay=1s"],
 //		["localhost:8080?delay=2s"],
@@ -123,8 +123,8 @@ func generateCases(serverAddress string) [][]string {
 	return res
 }
 
-// simulate the behaviour of makeRequests and returns approximated order of request responses
-// the larger difference between delays the more appropriate the orders will come out
+// simulate the behaviour of makeRequests and return approximated order of requests responses.
+// The larger the difference between delays the more appropriate orders will come out
 func simulate(threads int, addresses []string) (order []result, lasted time.Duration) {
 	if threads < 1 {
 		panic("threads num should be greater than 0")
