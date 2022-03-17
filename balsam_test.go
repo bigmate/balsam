@@ -129,6 +129,11 @@ func simulate(threads int, addresses []string) (order []result, lasted time.Dura
 	if threads < 1 {
 		panic("threads num should be greater than 0")
 	}
+
+	if len(addresses) == 0 {
+		return
+	}
+
 	if threads > len(addresses) {
 		threads = len(addresses)
 	}
